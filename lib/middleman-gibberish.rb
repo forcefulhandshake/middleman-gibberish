@@ -145,52 +145,42 @@ module ::Middleman
 
       template =
         <<-__
-          <html>
-            <head>
-              <style>
-                .gibberish {
-                  margin: auto;
-                  color: #999;
-                  text-align: center;
-                }
-
-                .gibberish-instructions,
-                .gibberish-password,
-                .gibberish-message
-                {
-                  margin-bottom: 1em;
-                }
-
-                .gibberish-password {
-                  border: 1px solid #ccc;
-                }
-
-                .gibberish-message {
-                  margin: auto;
-                  color: #633;
-                }
-              </style>
-            </head>
-
-            <body style='width:100%;'>
-              <br>
-              <br>
-              <br>
-              <div class='gibberish'>
-
-                <div class='gibberish-instructions'>
-                  enter password and press &lt;enter&gt;
-                </div>
-
-                <input id='gibberish-password' name='gibberish-password' type='password' class='gibberish-password'/>
-
-                <div class='gibberish-message'>
-                </div>
-
+        <html class='no-js' lang='en'>
+          <head>
+            <meta charset='utf-8'>
+            <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+            <meta content='index, follow' name='robots'>
+            <meta content='' name='description'>
+            <title></title>
+            <meta content='width=device-width, maximum-scale=1.0' name='viewport'>
+            <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+            <link href='images/favicon.ico' rel='icon' type='image/x-icon'>
+            <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+            <script src="javascripts/jquery.js"></script>
+            <script src="javascripts/jquery.cookie.js"></script>
+            <script src="javascripts/gibberish.js"></script>
+            <script src="javascripts/all.js"></script>
+            <link href="stylesheets/site.css" rel="stylesheet" />
+          </head>
+          <body>
+            <div class='welcome'>
+              <div class='logo'>
+                <img src="/images/my-resort-rewards.png" />
               </div>
-            </body>
+              <div class='login-box'>
+                <div class='gibberish'>
+                  <div class='gibberish-instructions'>
+                    Enter your provided MyResorts password.
+                  </div>
+                  <input class='gibberish-password' id='gibberish-password' name='gibberish-password' type='password'>
+                  <div class='gibberish-message'></div>
+                </div>
+              </div>
+            </div>
+          </body>
           </html>
-
 
           #{ scripts.join("\n") }
 
